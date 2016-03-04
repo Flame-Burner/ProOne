@@ -1,13 +1,99 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="7" inline="false" x="55" y="70">
+  <block type="controls_whileUntil" id="1" inline="false" x="52" y="-36">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
-      <block type="sensor_object" id="36">
-        <field name="OBJECT">LEFTFRONT</field>
+      <block type="sensor_button" id="18">
+        <field name="OBJECT">ENTER</field>
       </block>
     </value>
     <statement name="DO">
-      <block type="movement_forward" id="46"></block>
+      <block type="controls_if" id="25" inline="false">
+        <mutation elseif="1" else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="51" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="76">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="83">
+                <field name="NUM">75</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="movement_setmotors" id="93" inline="true">
+            <value name="BOTHMOVLEFT">
+              <block type="math_number" id="94">
+                <field name="NUM">95</field>
+              </block>
+            </value>
+            <value name="BOTHMOVRIGHT">
+              <block type="math_number" id="95">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare" id="96" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="97">
+                <field name="OBJECT">RIGHTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="98">
+                <field name="NUM">75</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="movement_setmotors" id="99" inline="true">
+            <value name="BOTHMOVLEFT">
+              <block type="math_number" id="100">
+                <field name="NUM">-95</field>
+              </block>
+            </value>
+            <value name="BOTHMOVRIGHT">
+              <block type="math_number" id="101">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="movement_setmotors" id="102" inline="true">
+            <value name="BOTHMOVLEFT">
+              <block type="math_number" id="103">
+                <field name="NUM">95</field>
+              </block>
+            </value>
+            <value name="BOTHMOVRIGHT">
+              <block type="math_number" id="104">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="robot_delay" id="115" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="116">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
     </statement>
+    <next>
+      <block type="movement_stop" id="126"></block>
+    </next>
   </block>
 </xml>
