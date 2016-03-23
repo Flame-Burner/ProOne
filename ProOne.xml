@@ -13,7 +13,7 @@
           <block type="logic_compare" id="4" inline="true">
             <field name="OP">EQ</field>
             <value name="A">
-              <block type="sensor_spectrometer" id="28">
+              <block type="sensor_spectrometer" id="5">
                 <field name="LIGHT">RED</field>
               </block>
             </value>
@@ -42,7 +42,7 @@
           <block type="logic_compare" id="10" inline="true">
             <field name="OP">EQ</field>
             <value name="A">
-              <block type="sensor_spectrometer" id="35">
+              <block type="sensor_spectrometer" id="11">
                 <field name="LIGHT">BLUE</field>
               </block>
             </value>
